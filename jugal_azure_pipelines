@@ -1,0 +1,15 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+trigger:
+- main  # or whichever branch you want to trigger the pipeline
+
+pool:
+  name: development  # This is your agent pool name
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a simple script'
+
+# Add more steps as needed
