@@ -6,8 +6,9 @@ trigger:
 - main  
 
 pool:
-  name: development  # Your agent pool name
-  demands: Agent.Name -equals LAPTOP-SM2SURAK  # Specify the exact agent name
+  name: development
+  demands:
+    - RunPipeline -equals True  # Use whatever capability name/value you added
 
 steps:
 - script: echo "Running on LAPTOP-SM2SURAK"
