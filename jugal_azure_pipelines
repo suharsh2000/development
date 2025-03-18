@@ -3,13 +3,15 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 trigger:
-- main  # or whichever branch you want to trigger the pipeline
+- main  
 
 pool:
-  name: development  # This is your agent pool name
-demands:LAPTOP-SM2SURAK
+  name: development  # Your agent pool name
+  demands: Agent.Name -equals LAPTOP-SM2SURAK  # Specify the exact agent name
+
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a simple script'
+- script: echo "Running on LAPTOP-SM2SURAK"
+  displayName: 'Run a script on a specific agent'
+
 
 # Add more steps as needed
