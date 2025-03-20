@@ -15,13 +15,11 @@ steps:
   displayName: 'Run a script on a specific agent'
 
 
-- task: Docker@2
-  displayName: 'Build and Push Docker Image'
-  inputs:
-    containerRegistry: 'YourDockerRegistryServiceConnection'  # Configure this in Azure DevOps
-    repository: 'yourdockerhubusername/your-image-name'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+- script: docker --version
+  displayName: 'Check Docker Version'
 
-- script: docker run yourdockerhubusername/your-image-name
-  displayName: 'Run Docker Container'
+- script: docker info
+  displayName: 'Check Docker Info'
+
+- script: docker run hello-world
+  displayName: 'Test Docker Container'
