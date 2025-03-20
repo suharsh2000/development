@@ -23,3 +23,12 @@ steps:
 
 - script: docker run hello-world
   displayName: 'Test Docker Container'
+
+- task: Docker@2
+  displayName: 'Build and Push Docker Image'
+  inputs:
+    command: 'buildAndPush'
+    containerRegistry: 'docker-hub-connection'  # Configure this in Azure DevOps
+    repository: 'yourdockerhubusername/your-image-name'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'
