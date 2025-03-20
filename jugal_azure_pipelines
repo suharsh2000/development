@@ -8,7 +8,7 @@ trigger:
 pool:
   name: development
   demands:
-    - RunPipeline -equals True  # Use whatever capability name/value you added
+    - agent.name -equals LAPTOP-SM2SURAK 
 
 steps:
 - script: echo "Running on LAPTOP-SM2SURAK"
